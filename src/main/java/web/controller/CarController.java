@@ -11,10 +11,10 @@ import web.service.CarService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/cars")
 public class CarController {
 
-    @RequestMapping(value = "cars", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String printCars(@RequestParam(value = "locale", required = false) String local, ModelMap model) {
         List<Car> cars = CarService.initCars();
         model.addAttribute("cars", cars);
